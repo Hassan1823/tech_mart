@@ -1,0 +1,6 @@
+color pallate :
+1) white: #FFFFFF
+2) black: #000000
+3) bg color: #F6F6F6
+4) font color: #020242 - #FDBB12
+5) main gold: #FFD700
