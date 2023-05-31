@@ -50,17 +50,27 @@ const App = () => {
     <div className="flex text-[18px]">
       <div
         className={` ${
-          open ? "w-72" : "w-20 "
+          open ? "w-72 h-screen" : "w-20 h-[160vh]"
         } bg-white h-screen border drop-shadow-lg pt-2 relative duration-300`}
       >
-          <div
-            // src="/Ellipse 677.svg"
-            className={`absolute cursor-pointer -right-3 top-9   bg-[#0707B4]
-          border-2 rounded-full flex justify-center items-center ${open ? 'w-[48px] h-[48px] border-[#0707B4]' : 'border-main-gold w-[28px] h-[28px]'}`}
-            onClick={() => setOpen(!open)}
-          >
-            <Image src="/sideArrow.svg" alt="side arrow" width={25} height={25} className="object-contain m-auto" />
-          </div>
+        <div
+          // src="/Ellipse 677.svg"
+          className={`absolute cursor-pointer -right-3 top-9   bg-[#0707B4]
+          border-2 rounded-full flex justify-center items-center ${
+            open
+              ? "w-[48px] h-[48px] border-[#0707B4]"
+              : "border-main-gold w-[28px] h-[28px]"
+          }`}
+          onClick={() => setOpen(!open)}
+        >
+          <Image
+            src="/sideArrow.svg"
+            alt="side arrow"
+            width={25}
+            height={25}
+            className="object-contain m-auto"
+          />
+        </div>
         <div className="flex gap-x-4 items-center justify-center w-full h-auto">
           <img
             src="/Tech Mart Logo - Side Bar.png"
@@ -74,7 +84,9 @@ const App = () => {
             Designer
           </h1> */}
         </div>
-        <ul className="pt-6 bg-[#020242] p-5 ">
+        <ul
+          className={`pt-6 bg-[#020242] p-5 ${open ? "" : "h-[150vh]"}`}
+        >
           {Menus.map((Menu, index) => (
             <div
               key={index}

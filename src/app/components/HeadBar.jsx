@@ -32,8 +32,8 @@ const HeadBar = () => {
             <Image
               src="/language.svg"
               alt="language"
-              width={25}
-              height={25}
+              width={20}
+              height={20}
               className="object-contain"
             />
           </button>
@@ -41,8 +41,8 @@ const HeadBar = () => {
             <Image
               src="/grid.svg"
               alt="language"
-              width={25}
-              height={25}
+              width={20}
+              height={20}
               className="object-contain"
             />
           </button>
@@ -50,8 +50,8 @@ const HeadBar = () => {
             <Image
               src="/darkmode.svg"
               alt="language"
-              width={25}
-              height={25}
+              width={20}
+              height={20}
               className="object-contain"
             />
           </button>
@@ -59,8 +59,8 @@ const HeadBar = () => {
             <Image
               src="/notification.svg"
               alt="language"
-              width={25}
-              height={25}
+              width={20}
+              height={20}
               className="object-contain"
             />
           </button>

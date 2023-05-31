@@ -57,7 +57,7 @@ const UserGrid = () => {
             <p className="text-[20px] ">{data.title}</p>
             {/* ratio */}
             <p className="text-[22px]">{data.ratio}</p>
-            <div className="text-[13px] flex flex-1 justify-between">
+            <div className="text-xs flex flex-1 justify-between">
               {/* analysis */}
               <p className="text-black">
                 {data.analytics} - {data.ana_per}

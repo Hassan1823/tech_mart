@@ -10,6 +10,7 @@ import Link from "next/link";
 
 // local Imports 
 import DashboardTable from './DashboardTable'
+// import TableComp from "./TableComp";
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -18,10 +19,10 @@ const MainDashboard = () => {
 
   return (
     <>
-      <div className="flex flex-col flex-1 h-full border rounded-lg shadow-md p-2">
+      <div className="flex flex-col flex-1 h-[110vh] border rounded-lg shadow-md p-2">
         <div className="flex w-full mx-2 my-5 justify-around gap-4 h-[70px]">
           {/* search bar */}
-          <div className="border rounded-lg shadow-lg flex justify-between items-center h-[70px] flex-1">
+          <div className="border rounded-lg shadow-lg flex justify-between items-center h-14 flex-1">
             <div className="flex flex-1">
               <Image
                 src="/search mart.svg"
@@ -44,11 +45,11 @@ const MainDashboard = () => {
           </div>
           {/* status */}
           <div className="w-[20%] flex justify-center">
-            <Menu as="div" className="relative inline-block tw-[20%] justify-centerext-left">
+            <Menu as="div" className="relative inline-block tw-[100%] justify-centerext-left">
               <div>
                 <Menu as="div" className="relative inline-block text-left">
                   <div>
-                    <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-6 py-5 text-[18px] font-medium text-[#32475C] text-opacity-80 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                    <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-3 text-[18px] font-medium text-[#32475C] text-opacity-80 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                       Select Role
                       <ChevronDownIcon
                         className="-mr-1 h-7 w-7 text-gray-400 ml-14"
@@ -126,13 +127,13 @@ const MainDashboard = () => {
               <div>
                 <Menu as="div" className="relative inline-block text-left">
                   <div>
-                    <Menu.Button className="inline-flex items-center w-full justify-center gap-x-1.5 rounded-md bg-white px-8 py-3 text-[18px] font-semibold text-black ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                    <Menu.Button className="inline-flex items-center w-full justify-center gap-x-1.5 rounded-md bg-white px-8 py-2 text-[18px] font-semibold text-black ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
                       <div className="bg-[#4B83C1] rounded-full p-2 mr-10 ml-2">
                         <Image
                           src="/export.svg"
                           alt="export "
-                          width={30}
-                          height={30}
+                          width={20}
+                          height={20}
                         />
                       </div>
                       Export
