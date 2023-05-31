@@ -12,6 +12,14 @@ module.exports = {
         "blue-color-2": "#FDBB12",
         "main-gold" : "#FFD700",
       },
+      dropShadow: {
+        '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
+        '4xl': [
+            '0px 2px 9px rgba(50, 71, 92, 0.06)',
+            ' 0px 4px 9px 1px rgba(50, 71, 92, 0.04)',
+            ' 0px 2px 6px 4px rgba(50, 71, 92, 0.02)'
+        ]
+      }
     },
   },
   plugins: [],
