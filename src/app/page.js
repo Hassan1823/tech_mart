@@ -81,7 +81,7 @@ const App = () => {
         </div>
         
         <div
-          className={`pt-6 bg-[#020242] p-5 ${open ? 'max-h-[173vh]' : 'h-[200vh]'} ${open ? 'overflow-y-scroll' : ''}`}
+          className={`pt-6 bg-gradient-to-t to-blue-1 from-blue-2 p-5 ${open ? 'max-h-[173vh]' : 'h-[200vh]'} ${open ? 'overflow-y-scroll' : ''}`}
         >
           <ul>
             {Menus.map((Menu, index) => (
