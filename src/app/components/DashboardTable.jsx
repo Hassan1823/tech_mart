@@ -375,7 +375,7 @@ const DashboardTable = () => {
         <div className="w-full h-autp flex justify-between items-center my-4 text-[#32475C] text-opacity-90">
           <h3 className="ml-8 text-lg font-[500]">All Users</h3>
           <div className="flex justify-between items-center gap-3">
-            <select className="border-none focus:outline-none w-14 text-[15px] text-[#32475C] text-opacity-60">
+            <select className="border-[#FAFAFC] border-2 h-[38px] focus:outline-none w-24 px-2 rounded-md text-[15px] text-[#32475C] text-opacity-60">
               <option className="hover:bg-gold-1 hover:bg-opacity-30">5</option>
               <option className="hover:bg-gold-1 hover:bg-opacity-30">8</option>
               <option className="hover:bg-gold-1 hover:bg-opacity-30">
