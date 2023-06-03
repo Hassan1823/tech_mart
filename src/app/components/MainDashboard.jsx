@@ -41,7 +41,7 @@ const MainDashboard = () => {
 
   return (
     <>
-      <div className="flex flex-col flex-1 h-auto w-full border rounded-lg shadow-md px-4 py-8">
+      <div className="flex flex-col flex-1 h-auto w-full border shadow-md px-4 py-8 bg-white rounded-md">
         <div className="flex justify-between w-full h-[70px] ">
           {/* search bar */}
           <div className="w-[55%] h-[80%] max-h-full rounded-md border-2 flex text-lg">

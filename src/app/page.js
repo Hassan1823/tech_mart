@@ -47,10 +47,11 @@ const App = () => {
   ];
 
   return (
-    <div className="flex text-base font-medium">
+    <div className="flex text-base font-medium h-auto
+      ">
       <div
         className={` ${
-          open ? "w-72 h-screen" : "w-20 h-[160vh]"
+          open ? "w-72 h-auto" : "w-20 h-[150vh]"
         } bg-white h-screen border drop-shadow-lg pt-2 relative duration-300`}
       >
         <div
@@ -81,7 +82,7 @@ const App = () => {
         </div>
         
         <div
-          className={`pt-6 bg-gradient-to-t to-blue-1 from-blue-2 p-5 ${open ? 'max-h-[173vh]' : 'h-[200vh]'} ${open ? 'overflow-y-scroll' : ''}`}
+          className={`pt-6 bg-gradient-to-t to-blue-1 from-blue-2 p-5 ${open ? 'max-h-[157vh]' : 'h-[177vh]'} ${open ? 'overflow-y-scroll' : ''}`}
         >
           <ul>
             {Menus.map((Menu, index) => (
@@ -130,7 +131,7 @@ const App = () => {
           </ul>
         </div>
       </div>
-      <div className="h-screen flex-1 px-4 py-[19px]">
+      <div className="h-full flex-1 px-4 py-[19px] bg-[#FAFAFC]">
         <HeadBar />
         <UserGrid />
         <MainDashboard />

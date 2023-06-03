@@ -386,29 +386,32 @@ const DashboardTable = () => {
             <label className="text-xs mr-4">Show Users Per Page</label>
           </div>
         </div>
-        <table className="table-auto border-separate border-spacing-x-6 border-spacing-y-8 w-full h-[60vh] mb-8 text-lg text-center">
-          <thead>
-            <tr>
-              <th>
-                <input type="checkbox" name="check" id="" className="w-[15px] h-[15px]"/>
-              </th>
-              <th className="text-left">Users</th>
-              <th className="text-left">Emails</th>
+        {/* border-separate border-spacing-x-6 border-spacing-y-8 */}
+        <table className="table-auto border-separate w-full h-[60vh] mb-8 text-lg text-center rounded-lg bg-[#FAFAFC]">
+          <thead className=" w-full h-auto">
+            <tr className="">
+              {/* <th>
+              </th> */}
+              <th className="text-left w-[230px] h-[60px] p-4">
+                <input type="checkbox" name="check" id="" className="w-[15px] h-[15px] mr-4"/>
+                Users
+                </th>
+              <th className="text-left p-4 w-[260px]">Emails</th>
               <th>Products</th>
               <th>Orders</th>
               <th>Subscription</th>
               <th>Action</th>
             </tr>
           </thead>
-          <tbody className="text-base text-[#32475C]">
+          <tbody className="text-[15px] text-[#32475C] bg-white">
             {currentTodos.map((data, index) => {
               return (
                 <tr key={index} className="">
-                  <td className="flex justify-center items-center">
-                    <input type="checkbox" name="check" id="" className="w-[15px] h-[15px]" value="checked"/>
-                  </td>
-                  <td className="">
+                  {/* <td className="w-[30px] h-[60px] flex justify-center items-center">
+                  </td> */}
+                  <td className="w-[250px] h-[60px] px-4">
                     <div className="flex justify-start gap-2 items-center">
+                    <input type="checkbox" name="check" id="" className="w-[15px] h-[15px] mr-4" value="checked"/>
                       <Image
                         src={`/${data.src}.svg`}
                         alt="avatar"
@@ -418,10 +421,10 @@ const DashboardTable = () => {
                       <span className="text-opacity-80">{data.name}</span>
                     </div>
                   </td>
-                  <td className="justify-start align-middle flex items-center">
+                  <td className="w-auto h-[60px] px-4 justify-start align-middle flex items-center">
                     {data.email}
                   </td>
-                  <td className="justify-center">
+                  <td className="justify-center align-middle">
                     {data.product}
                   </td>
                   <td className="justify-center align-middle flex items-center">
@@ -440,7 +443,7 @@ const DashboardTable = () => {
                       {data.subs}
                     </span>
                   </td>
-                  <td className="justify-between align-middle flex items-center">
+                  <td className="justify-center align-middle flex items-center">
                     <button className="flex gap-2 w-[117px] h-[34px] bg-[#015FCC] justify-center items-center text-white rounded-md">
                       <Image
                         src="/View.svg"

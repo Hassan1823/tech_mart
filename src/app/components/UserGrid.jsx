@@ -49,7 +49,7 @@ const UserGrid = () => {
         return (
           <div
             key={index}
-            className={"w-full h-[90%] font-normal border text-[#020242] rounded-lg shadow-md flex flex-col py-2 px-6 cursor-pointer gap-2 " + (isActive ? "bg-gradient-to-t from-gold-2 to-gold-1" : "bg-[#fff]")}
+            className={"w-full h-[90%] font-normal border text-[#020242] rounded-lg shadow-md flex flex-col py-2 px-6 cursor-pointer gap-2 " + (isActive ? "bg-gradient-to-t from-gold-2 to-gold-1" : "bg-white")}
             // style={{ backgroundColor: isActive ? "#FDBB12" : "#fff" }}
             onClick={() => handleClick(index)}
           >

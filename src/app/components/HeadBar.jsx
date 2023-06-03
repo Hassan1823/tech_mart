@@ -7,7 +7,7 @@ const HeadBar = () => {
   const [searchValue, setSearchValue] = useState("");
   return (
     <>
-      <div className="flex flex-1 border py-2 px-6 h-[70px] rounded-lg shadow-md items-center text-[#32475C] text-opacity-40">
+      <div className="flex flex-1 border py-2 px-6 h-[70px] rounded-lg shadow-md items-center text-[#32475C] text-opacity-40 bg-white">
         {/* search */}
         <div className="flex flex-1">
           <Image
