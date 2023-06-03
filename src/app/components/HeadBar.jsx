@@ -11,7 +11,7 @@ const HeadBar = () => {
         {/* search */}
         <div className="flex flex-1">
           <Image
-            src="/search mart.svg"
+            src="/Search Bar.svg"
             alt="language"
             width={20}
             height={20}
@@ -32,7 +32,7 @@ const HeadBar = () => {
             <Image
               src="/language.svg"
               alt="language"
-              width={20}
+              width={22}
               height={20}
               className="object-contain"
             />
@@ -41,8 +41,8 @@ const HeadBar = () => {
             <Image
               src="/grid.svg"
               alt="language"
-              width={20}
-              height={20}
+              width={18}
+              height={18}
               className="object-contain"
             />
           </button>
@@ -57,19 +57,19 @@ const HeadBar = () => {
           </button>
           <button>
             <Image
-              src="/notification.svg"
+              src="/bx-notification.svg"
               alt="language"
-              width={20}
-              height={20}
+              width={24}
+              height={24}
               className="object-contain"
             />
           </button>
           <button>
             <Image
-              src="/Avatar.svg"
+              src="/online.svg"
               alt="avatar"
-              width={45}
-              height={45}
+              width={40}
+              height={40}
               className="object-contain"
             />
           </button>

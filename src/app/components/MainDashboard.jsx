@@ -2,240 +2,134 @@
 
 import Image from "next/image";
 import React, { useState } from "react";
-import { Fragment } from "react";
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import Link from "next/link";
 
-
-// local Imports 
-import DashboardTable from './DashboardTable'
+// local Imports
+import DashboardTable from "./DashboardTable";
 // import TableComp from "./TableComp";
+
+const exportMenu = [
+  {
+    title: "PDF",
+    src: "pdf",
+  },
+  {
+    title: "Excel",
+    src: "excel",
+  },
+  {
+    title: "CSV",
+    src: "csv",
+  },
+  {
+    title: "Word",
+    src: "word",
+  },
+  {
+    title: "Copy",
+    src: "Copy",
+  },
+];
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
+
 const MainDashboard = () => {
   const [searchValue, setSearchValue] = useState("");
+  const [openStatus, setOpenStatus] = useState(false);
+  const [openExport, setOpenExport] = useState(false);
 
   return (
     <>
-      <div className="flex flex-col flex-1 h-[110vh] border rounded-lg shadow-md p-2">
-        <div className="flex w-full mx-2 my-5 justify-around gap-4 h-[70px]">
+      <div className="flex flex-col flex-1 h-auto w-full border rounded-lg shadow-md px-4 py-8">
+        <div className="flex justify-between w-full h-[70px] ">
           {/* search bar */}
-          <div className="border rounded-lg shadow-lg flex justify-between items-center h-14 flex-1">
-            <div className="flex flex-1">
-              <Image
-                src="/search mart.svg"
-                alt="language"
-                width={20}
-                height={20}
-                className="mx-4 object-contain "
-              />
-              <input
-                type="search"
-                placeholder="Search (Ctrl+/)"
-                value={searchValue}
-                onChange={(e) => setSearchValue(e.target.value)}
-                className="outline-none focus:outline-none flex-1 mr-8"
-              />
-            </div>
-            <buton className="bg-[#015FCC] text-white rounded-lg h-full w-[150px] flex justify-center items-center text-[18px] font-mnedium leading-8 cursor-pointer">
+          <div className="w-[55%] h-[80%] max-h-full rounded-md border-2 flex text-lg">
+            <Image
+              src="/Search Bar.svg"
+              alt="language"
+              width={22}
+              height={22}
+              className="mx-4 object-contain"
+            />
+            <input
+              type="search"
+              placeholder="Search User"
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+              className="outline-none focus:outline-none mr-20 flex-1"
+            />
+            <button className="bg-[#015FCC] w-[20%] h-full text-white rounded-r-md">
               Search
-            </buton>
+            </button>
           </div>
           {/* status */}
-          <div className="w-[20%] flex justify-center">
-            <Menu as="div" className="relative inline-block tw-[100%] justify-centerext-left">
-              <div>
-                <Menu as="div" className="relative inline-block text-left">
-                  <div>
-                    <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-3 text-[18px] font-medium text-[#32475C] text-opacity-80 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                      Select Role
-                      <ChevronDownIcon
-                        className="-mr-1 h-7 w-7 text-gray-400 ml-14"
-                        aria-hidden="true"
-                      />
-                    </Menu.Button>
-                  </div>
-
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <div className="p-2">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              href="/"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-[#32475C] text-opacity-60",
-                                "block px-4 py-2 text-[15px]"
-                              )}
-                            >
-                              Baisc
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              href="/"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-[#32475C] text-opacity-60",
-                                "block px-4 py-2 text-[15px]"
-                              )}
-                            >
-                              Premium
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              href="/"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-[#32475C] text-opacity-60",
-                                "block px-4 py-2 text-[15px]"
-                              )}
-                            >
-                              Block
-                            </Link>
-                          )}
-                        </Menu.Item>
-                      </div>
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
-              </div>
-            </Menu>
+          <div className="flex flex-col w-[18%] h-auto text-[#32475C] text-opacity-60">
+            <button
+              className="border-2 w-full h-[80%] bg-white rounded-md flex justify-around items-center cursor-pointer py-4"
+              onClick={() => setOpenStatus(!openStatus)}
+            >
+              <span>Select Status</span>
+              <Image
+                src="/Drop Down Icon.svg"
+                alt="dropdown"
+                width={12}
+                height={12}
+              />
+            </button>
+            {/* drop down options */}
+            {openStatus ? (
+              <>
+                <ul className="bg-white z-10 w-full border-2 flex flex-col justify-around items-start rounded-md ">
+                  <li className="hover:text-blue-1 py-2 px-4 hover:bg-gold-1 hover:bg-opacity-30 w-full cursor-pointer">
+                    Online
+                  </li>
+                  <li className="border w-[90%] mx-auto my-1"></li>
+                  <li className="hover:text-blue-1 py-2 px-4 hover:bg-gold-1 hover:bg-opacity-30 w-full cursor-pointer">
+                    Offline
+                  </li>
+                </ul>
+              </>
+            ) : (
+              <></>
+            )}
           </div>
           {/* export */}
-          <div className="w-[20%] flex justify-center">
-            <Menu as="div" className="relative inline-block text-left ">
-              <div>
-                <Menu as="div" className="relative inline-block text-left">
-                  <div>
-                    <Menu.Button className="inline-flex items-center w-full justify-center gap-x-1.5 rounded-md bg-white px-8 py-2 text-[18px] font-semibold text-black ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                      <div className="bg-[#4B83C1] rounded-full p-2 mr-10 ml-2">
+          <div className="flex flex-col w-[18%] h-auto text-[#32475C] text-opacity-60">
+            <button
+              className="border-2 w-full h-[80%] bg-white rounded-md flex justify-evenly items-center cursor-pointer py-4"
+              onClick={() => setOpenExport(!openExport)}
+            >
+              <Image
+                src="/Export Icon.svg"
+                alt="dropdown"
+                width={32}
+                height={32}
+              />
+              <span>Export</span>
+            </button>
+            {/* drop down options */}
+            {openExport ? (
+              <>
+                <ul className="bg-white z-10 w-full border-2 flex flex-col items-start rounded-md ">
+                  {exportMenu.map((exportData, index) => {
+                    return (
+                      <li key={index} className="hover:text-blue-1 py-2 px-4 hover:bg-gold-1 hover:bg-opacity-30 w-full cursor-pointer flex gap-4">
                         <Image
-                          src="/export.svg"
-                          alt="export "
-                          width={20}
-                          height={20}
+                          src={`/${exportData.src}.svg`}
+                          alt="pdf"
+                          width={12}
+                          height={14}
                         />
-                      </div>
-                      Export
-                      {/* <ChevronDownIcon
-                        className="-mr-1 h-7 w-7 text-gray-400 ml-14"
-                        aria-hidden="true"
-                    /> */}
-                    </Menu.Button>
-                  </div>
-
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <div className="p-2">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              href="/"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-[#32475C] text-opacity-60",
-                                "block px-4 py-2 text-[15px]"
-                              )}
-                            >
-                              PDF{" "}
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              href="/"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-[#32475C] text-opacity-60",
-                                "block px-4 py-2 text-[15px]"
-                              )}
-                            >
-                              Excel
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              href="/"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-[#32475C] text-opacity-60",
-                                "block px-4 py-2 text-[15px]"
-                              )}
-                            >
-                              CSV
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              href="/"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-[#32475C] text-opacity-60",
-                                "block px-4 py-2 text-[15px]"
-                              )}
-                            >
-                              Word
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              href="/"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-[#32475C] text-opacity-60",
-                                "block px-4 py-2 text-[15px]"
-                              )}
-                            >
-                              Copy
-                            </Link>
-                          )}
-                        </Menu.Item>
-                      </div>
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
-              </div>
-            </Menu>
+                        {exportData.title}
+                      </li>
+                    );
+                  })}
+                </ul>
+              </>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
         <DashboardTable />

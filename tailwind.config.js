@@ -11,6 +11,11 @@ module.exports = {
         "blue-color-1": "#F6F6F6",
         "blue-color-2": "#FDBB12",
         "main-gold" : "#FFD700",
+        "blue-1": '#0707B4',
+        "blue-2": '#020242',
+        "gold-1": "#FFD700",
+        "gold-2": "#FDBB12",
+
       },
       dropShadow: {
         '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',

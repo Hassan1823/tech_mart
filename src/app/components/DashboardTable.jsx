@@ -1,11 +1,6 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import ReactPaginate from "react-paginate";
-import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import { Fragment } from "react";
-
-import Link from "next/link";
 const tableData = [
   {
     src: "Avatar",
@@ -16,7 +11,7 @@ const tableData = [
     subs: "Basic",
   },
   {
-    src: "Avatar",
+    src: "Avatar 1",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 350,
@@ -24,7 +19,7 @@ const tableData = [
     subs: "Premium",
   },
   {
-    src: "Avatar",
+    src: "Avatar 2",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 15,
@@ -32,7 +27,47 @@ const tableData = [
     subs: "Premium",
   },
   {
-    src: "Avatar",
+    src: "Avatar 3",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 0,
+    orders: 0,
+    subs: "Basic",
+  },
+  {
+    src: "Avatar 4",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 50,
+    orders: 100,
+    subs: "Premium",
+  },
+  {
+    src: "Avatar 5",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 35,
+    orders: 27,
+    subs: "Basic",
+  },
+  {
+    src: "Avatar 6",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 20,
+    orders: 1,
+    subs: "Block",
+  },
+  {
+    src: "Avatar 7",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 15,
+    orders: 65,
+    subs: "Block",
+  },
+  {
+    src: "Avatar 8",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 0,
@@ -45,10 +80,36 @@ const tableData = [
     email: "Jordan Stevenson@gmail.com",
     product: 50,
     orders: 100,
+    subs: "Block",
+  },
+  
+  
+  {
+    src: "Avatar 4",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 15,
+    orders: 65,
     subs: "Premium",
   },
   {
-    src: "Avatar",
+    src: "Avatar 6",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 0,
+    orders: 0,
+    subs: "Basic",
+  },
+  {
+    src: "Avatar 7",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 50,
+    orders: 100,
+    subs: "Premium",
+  },
+  {
+    src: "Avatar 8",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 35,
@@ -64,7 +125,7 @@ const tableData = [
     subs: "Block",
   },
   {
-    src: "Avatar",
+    src: "Avatar 1",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 15,
@@ -72,7 +133,7 @@ const tableData = [
     subs: "Block",
   },
   {
-    src: "Avatar",
+    src: "Avatar 2",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 0,
@@ -80,7 +141,7 @@ const tableData = [
     subs: "Basic",
   },
   {
-    src: "Avatar",
+    src: "Avatar 3",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 50,
@@ -88,7 +149,7 @@ const tableData = [
     subs: "Block",
   },
   {
-    src: "Avatar",
+    src: "Avatar 4",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 35,
@@ -96,7 +157,7 @@ const tableData = [
     subs: "Basic",
   },
   {
-    src: "Avatar",
+    src: "Avatar 5",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 20,
@@ -104,7 +165,15 @@ const tableData = [
     subs: "Block",
   },
   {
-    src: "Avatar",
+    src: "Avatar 6",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 350,
+    orders: 11500,
+    subs: "Premium",
+  },
+  {
+    src: "Avatar 7",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 15,
@@ -112,7 +181,7 @@ const tableData = [
     subs: "Premium",
   },
   {
-    src: "Avatar",
+    src: "Avatar 8",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 0,
@@ -128,15 +197,15 @@ const tableData = [
     subs: "Premium",
   },
   {
-    src: "Avatar",
+    src: "Avatar 1",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 35,
     orders: 27,
-    subs: "Block",
+    subs: "Basic",
   },
   {
-    src: "Avatar",
+    src: "Avatar 2",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 20,
@@ -144,7 +213,47 @@ const tableData = [
     subs: "Block",
   },
   {
-    src: "Avatar",
+    src: "Avatar 3",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 15,
+    orders: 65,
+    subs: "Block",
+  },
+  {
+    src: "Avatar 4",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 0,
+    orders: 0,
+    subs: "Basic",
+  },
+  {
+    src: "Avatar 5",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 50,
+    orders: 100,
+    subs: "Block",
+  },
+  {
+    src: "Avatar 6",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 35,
+    orders: 27,
+    subs: "Basic",
+  },
+  {
+    src: "Avatar 7",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 20,
+    orders: 1,
+    subs: "Block",
+  },
+  {
+    src: "Avatar 8",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 15,
@@ -157,10 +266,10 @@ const tableData = [
     email: "Jordan Stevenson@gmail.com",
     product: 0,
     orders: 0,
-    subs: "Block",
+    subs: "Basic",
   },
   {
-    src: "Avatar",
+    src: "Avatar 1",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 50,
@@ -168,7 +277,7 @@ const tableData = [
     subs: "Premium",
   },
   {
-    src: "Avatar",
+    src: "Avatar 2",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 35,
@@ -176,7 +285,47 @@ const tableData = [
     subs: "Block",
   },
   {
-    src: "Avatar",
+    src: "Avatar 3",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 20,
+    orders: 1,
+    subs: "Block",
+  },
+  {
+    src: "Avatar 4",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 15,
+    orders: 65,
+    subs: "Premium",
+  },
+  {
+    src: "Avatar 5",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 0,
+    orders: 0,
+    subs: "Block",
+  },
+  {
+    src: "Avatar 6",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 50,
+    orders: 100,
+    subs: "Premium",
+  },
+  {
+    src: "Avatar 7",
+    name: "Jordan Stevenson",
+    email: "Jordan Stevenson@gmail.com",
+    product: 35,
+    orders: 27,
+    subs: "Block",
+  },
+  {
+    src: "Avatar 8",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 20,
@@ -192,7 +341,7 @@ const tableData = [
     subs: "Premium",
   },
   {
-    src: "Avatar",
+    src: "Avatar 1",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 29,
@@ -200,7 +349,7 @@ const tableData = [
     subs: "Premium",
   },
   {
-    src: "Avatar",
+    src: "Avatar 2",
     name: "Jordan Stevenson",
     email: "Jordan Stevenson@gmail.com",
     product: 20,
@@ -210,7 +359,8 @@ const tableData = [
 ];
 const DashboardTable = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const todosPerPage = 5;
+
+  const todosPerPage = 9;
   const pageCount = Math.ceil(tableData.length / todosPerPage);
 
   const handlePageClick = ({ selected }) => {
@@ -222,81 +372,28 @@ const DashboardTable = () => {
   return (
     <>
       <div className="">
-        <div className="w-full h-14 flex justify-between items-center my-4 text-[#32475C] text-opacity-90">
+        <div className="w-full h-autp flex justify-between items-center my-4 text-[#32475C] text-opacity-90">
           <h3 className="ml-8 text-lg font-[500]">All Users</h3>
           <div className="flex justify-between items-center gap-3">
-            <Menu
-              as="div"
-              className="relative inline-block tw-[100%] justify-centerext-left"
-            >
-              <div>
-                <Menu as="div" className="relative inline-block text-left">
-                  <div className="">
-                    <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-3 text-[18px] font-medium text-[#32475C] text-opacity-80 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
-                      5
-                      <Image src='/Drop Down Icon.svg' alt='dropdown' width={15} height={15} className="ml-8 my-auto"/>
-                   
-                    </Menu.Button>
-                  </div>
-
-                  <Transition
-                    as={Fragment}
-                    enter="transition ease-out duration-100"
-                    enterFrom="transform opacity-0 scale-95"
-                    enterTo="transform opacity-100 scale-100"
-                    leave="transition ease-in duration-75"
-                    leaveFrom="transform opacity-100 scale-100"
-                    leaveTo="transform opacity-0 scale-95"
-                  >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                      <div className="p-2">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              href="/"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-[#32475C] text-opacity-60",
-                                "block px-4 py-2 text-[15px]"
-                              )}
-                            >
-                              5
-                            </Link>
-                          )}
-                        </Menu.Item>
-                        <Menu.Item>
-                          {({ active }) => (
-                            <Link
-                              href="/"
-                              className={classNames(
-                                active
-                                  ? "bg-gray-100 text-gray-900"
-                                  : "text-[#32475C] text-opacity-60",
-                                "block px-4 py-2 text-[15px]"
-                              )}
-                            >
-                              9
-                            </Link>
-                          )}
-                        </Menu.Item>
-                      </div>
-                    </Menu.Items>
-                  </Transition>
-                </Menu>
-              </div>
-            </Menu>
+            <select className="border-none focus:outline-none w-14 text-[15px] text-[#32475C] text-opacity-60">
+              <option className="hover:bg-gold-1 hover:bg-opacity-30">5</option>
+              <option className="hover:bg-gold-1 hover:bg-opacity-30">8</option>
+              <option className="hover:bg-gold-1 hover:bg-opacity-30">
+                10
+              </option>
+            </select>
+            {/* <Image src="/Drop Down Icon.svg" alt="dropdown" width={10} height={8} /> */}
             <label className="text-xs mr-4">Show Users Per Page</label>
           </div>
         </div>
-        <table className="table-auto border-separate border-spacing-x-6 border-spacing-y-4 text-center w-full h-[60vh] mb-8">
+        <table className="table-auto border-separate border-spacing-x-6 border-spacing-y-8 w-full h-[60vh] mb-8 text-lg text-center">
           <thead>
             <tr>
               <th>
-                <input type="checkbox" name="check" id="" />
+                <input type="checkbox" name="check" id="" className="w-[15px] h-[15px]"/>
               </th>
-              <th>Users</th>
-              <th>Emails</th>
+              <th className="text-left">Users</th>
+              <th className="text-left">Emails</th>
               <th>Products</th>
               <th>Orders</th>
               <th>Subscription</th>
@@ -306,25 +403,25 @@ const DashboardTable = () => {
           <tbody className="text-base text-[#32475C]">
             {currentTodos.map((data, index) => {
               return (
-                <tr key={index}>
+                <tr key={index} className="">
                   <td className="flex justify-center items-center">
-                    <input type="checkbox" name="check" id="" />
+                    <input type="checkbox" name="check" id="" className="w-[15px] h-[15px]" value="checked"/>
                   </td>
-                  <td className="justify-center align-middle">
-                    <div className="flex gap-2 justify-evenly items-center">
+                  <td className="">
+                    <div className="flex justify-start gap-2 items-center">
                       <Image
                         src={`/${data.src}.svg`}
                         alt="avatar"
-                        width={30}
-                        height={30}
+                        width={38}
+                        height={38}
                       />
                       <span className="text-opacity-80">{data.name}</span>
                     </div>
                   </td>
-                  <td className="justify-center align-middle flex items-center">
-                    {data.name}
+                  <td className="justify-start align-middle flex items-center">
+                    {data.email}
                   </td>
-                  <td className="justify-center align-middle">
+                  <td className="justify-center">
                     {data.product}
                   </td>
                   <td className="justify-center align-middle flex items-center">
@@ -334,17 +431,17 @@ const DashboardTable = () => {
                     <span
                       className={`${
                         data.subs === "Basic"
-                          ? "bg-[#72E128] px-12"
+                          ? "bg-[#72E128] px-11"
                           : data.subs === "Premium"
                           ? "bg-[#FFD700] px-8"
-                          : "bg-[#32475C] px-12"
-                      } bg-opacity-20 py-4 rounded-md`}
+                          : "bg-[#32475C] px-11"
+                      } bg-opacity-20 py-4 rounded-md w-[134px] h-[55px]`}
                     >
                       {data.subs}
                     </span>
                   </td>
-                  <td className="justify-center align-middle flex items-center">
-                    <button className="flex gap-3 bg-[#015FCC] px-6 py-3 justify-center items-center text-white rounded-md">
+                  <td className="justify-between align-middle flex items-center">
+                    <button className="flex gap-2 w-[117px] h-[34px] bg-[#015FCC] justify-center items-center text-white rounded-md">
                       <Image
                         src="/View.svg"
                         alt="view"
@@ -359,7 +456,10 @@ const DashboardTable = () => {
             })}
           </tbody>
         </table>
-        <div className="pagination-container flex justify-end mr-6">
+        <div className="pagination-container flex justify-end mr-6 mt-auto items-center">
+          <div className="text-[#32475C] text-opacity-90 text-base mr-auto ml-5">
+            {`Showing ${currentPage+1} to ${pageCount} of ${todosPerPage * pageCount} entries`} 
+          </div>
           <ReactPaginate
             previousLabel={"Previous"}
             nextLabel={"Next"}
@@ -369,15 +469,15 @@ const DashboardTable = () => {
             onPageChange={handlePageClick}
             containerClassName={"pagination flex items-center gap-2 space-x-2"}
             previousLinkClassName={
-              "previousLink text-[#000000] px-3 py-2  text-opacity-80 border border-gray-300 rounded-md bg-[#F5F5F9]"
+              "previousLink text-[#000000] text-[15px] w-[116px] h-[40px] p-2 text-opacity-80 border border-gray-300 rounded-md bg-[#F5F5F9]"
             }
-            nextLinkClassName={`nextLink px-3 py-2  text-[#000000] text-opacity-80 border border-gray-300 rounded-md bg-[#F5F5F9] ${
+            nextLinkClassName={`nextLink text-[15px] w-[136px] h-[40px] p-2 text-[#000000] text-opacity-80 border border-gray-300 rounded-md bg-[#F5F5F9] ${
               currentPage === pageCount - 1
                 ? "disabled opacity-80 cursor-not-allowed"
                 : ""
             }`}
             pageClassName={(page) =>
-              `page border  px-3 py-2  border-gray-300 rounded-md ${
+              `page border w-[40px] h-[40px] flex justify-center items-center px-3 py-2  border-gray-300 rounded-md ${
                 currentPage === pageCount - 1
                   ? "disabled opacity-100 cursor-not-allowed"
                   : ""

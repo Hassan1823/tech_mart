@@ -43,13 +43,13 @@ const UserGrid = () => {
     },
   ];
   return (
-    <div className="grid lg:grid-cols-4 gap-3 md:grid-cols-2 my-6 w-full">
+    <div className="grid lg:grid-cols-4 gap-4 md:grid-cols-2 my-6 w-full h-[128px]">
       {userData.map((data, index) => {
         const isActive = activeIndex === index;
         return (
           <div
             key={index}
-            className="w-[95%] h-[128px] font-normal border text-[#020242] rounded-lg shadow-md flex flex-col py-4 px-8 cursor-pointer gap-1"
+            className="w-full h-[90%] font-normal border text-[#020242] rounded-lg shadow-md flex flex-col py-2 px-6 cursor-pointer gap-2"
             style={{ backgroundColor: isActive ? "#FDBB12" : "#fff" }}
             onClick={() => handleClick(index)}
           >
