@@ -393,7 +393,7 @@ const DashboardTable = () => {
               {/* <th>
               </th> */}
               <th className="text-left w-[230px] h-[60px] p-4">
-                <input type="checkbox" name="check" id="" className="w-[15px] h-[15px] mr-4"/>
+                <input type="checkbox" name="check" id="" className="w-[15px] h-[15px] mr-6"/>
                 Users
                 </th>
               <th className="text-left p-4 w-[260px]">Emails</th>
